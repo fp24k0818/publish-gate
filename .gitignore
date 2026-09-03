@@ -3,3 +3,4 @@ run/
 demo/
 *.tmp
 output/*.tmp
+Vault/
