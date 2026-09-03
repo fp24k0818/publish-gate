@@ -1,0 +1,13 @@
+account_id,display_name,handle,platform,email,status,former_handle,risk_review_required
+LM-101,Lumora公式,@lumora_hq,tessera,hello@lumora.example.jp,active,,no
+LM-102,Lumora　公式,@lumora_rl,relayo,hello@lumora.example.jp,active,,no
+LM-103,Lumora公式旧,@lumora_hq_old,tessera,hello@lumora.example.jp,suspended,,no
+LM-104,Lumora公式,@lumora_hq2,tessera,hello@lumora.example.jp,active,@lumora_hq_old,no
+LM-105,積立ラボ,@tsumitate_lab,tessera,lab@lumora.example.jp,active,,yes
+LM-106,Lumora Journal,@lumora_journal,ledgerly,,active,,yes
+LM-107,Lumoraニュース,,tessera,news@lumora.example.jp,active,,no
+LM-108,Lumora日記,@lumora_diary,ledgerly,diary@lumora.example.jp,active,,no
+LM-109,家計みらい,@kakei_mirai,relayo,mirai@lumora.example.jp,active,,yes
+LM-110,まなびの窓,@manabi_window,relayo,manabi@lumora.example.jp,active,,yes
+LM-111,雑記帳,@zakki_lumora,tessera,misc@lumora.example.jp,active,,no
+LM-112,積立ラボ,@tsumitate_lab2,relayo,lab2@lumora.example.jp,active,,yes

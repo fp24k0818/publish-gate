@@ -1,0 +1,168 @@
+{
+  "note": "approved を true にして再実行すると公開されます",
+  "items": [
+    {
+      "draft_id": "SC-1006",
+      "topic": "家計の赤字対策",
+      "scheduled_at": "2026-09-10T07:00:00+09:00",
+      "platform_ref": "@zakki_lumora",
+      "account_id": "LM-111",
+      "handle": "@zakki_lumora",
+      "platform": "tessera",
+      "action": "approval_p1",
+      "reason": "内容起因のリスク（法令抵触の可能性）",
+      "flags": [
+        "断定的表現を含む"
+      ],
+      "approved": false,
+      "body_preview": "この方法なら家計の赤字は必ず解消できます。"
+    },
+    {
+      "draft_id": "SC-1037",
+      "topic": "保険の見直し",
+      "scheduled_at": "2026-09-10T08:00:00+09:00",
+      "platform_ref": "@kakei_mirai",
+      "account_id": "LM-109",
+      "handle": "@kakei_mirai",
+      "platform": "relayo",
+      "action": "approval_p1",
+      "reason": "内容起因のリスク（法令抵触の可能性）",
+      "flags": [
+        "断定的表現を含む",
+        "要確認アカウント"
+      ],
+      "approved": false,
+      "body_preview": "保険を乗り換えれば、支出は確実に下がると断言できます。"
+    },
+    {
+      "draft_id": "SC-1004",
+      "topic": "NISAの基本",
+      "scheduled_at": "2026-09-10T08:15:00+09:00",
+      "platform_ref": "@manabi_window",
+      "account_id": "LM-110",
+      "handle": "@manabi_window",
+      "platform": "relayo",
+      "action": "approval_p1",
+      "reason": "内容起因のリスク（法令抵触の可能性）",
+      "flags": [
+        "断定的表現を含む",
+        "要確認アカウント"
+      ],
+      "approved": false,
+      "body_preview": "新NISAの活用で、将来の資産は必ず増えると言えます。"
+    },
+    {
+      "draft_id": "SC-1030",
+      "topic": "先取り貯蓄",
+      "scheduled_at": "2026-09-10T20:15:00+09:00",
+      "platform_ref": "@lumora_hq",
+      "account_id": "LM-101",
+      "handle": "@lumora_hq",
+      "platform": "tessera",
+      "action": "approval_p1",
+      "reason": "内容起因のリスク（法令抵触の可能性）",
+      "flags": [
+        "断定的表現を含む"
+      ],
+      "approved": false,
+      "body_preview": "先取り貯蓄を始めれば、貯金は確実に増えます。"
+    },
+    {
+      "draft_id": "SC-1016",
+      "topic": "積立投資の心構え",
+      "scheduled_at": "2026-09-10T20:30:00+09:00",
+      "platform_ref": "@tsumitate_lab",
+      "account_id": "LM-105",
+      "handle": "@tsumitate_lab",
+      "platform": "tessera",
+      "action": "approval_p1",
+      "reason": "内容起因のリスク（法令抵触の可能性）",
+      "flags": [
+        "断定的表現を含む",
+        "要確認アカウント"
+      ],
+      "approved": false,
+      "body_preview": "積立投資は元本保証と同じ安心感で続けられます。"
+    },
+    {
+      "draft_id": "SC-1001",
+      "topic": "積立の記録方法",
+      "scheduled_at": "2026-09-05T08:30:00+09:00",
+      "platform_ref": "@tsumitate_lab",
+      "account_id": "LM-105",
+      "handle": "@tsumitate_lab",
+      "platform": "tessera",
+      "action": "approval_p2",
+      "reason": "アカウント起因のリスク",
+      "flags": [
+        "要確認アカウント"
+      ],
+      "approved": false,
+      "body_preview": "積立の設定内容は1枚の表にまとめると管理しやすくなります。"
+    },
+    {
+      "draft_id": "SC-1018",
+      "topic": "積立の考え方",
+      "scheduled_at": "2026-09-11T12:00:00+09:00",
+      "platform_ref": "@tsumitate_lab2",
+      "account_id": "LM-112",
+      "handle": "@tsumitate_lab2",
+      "platform": "relayo",
+      "action": "approval_p2",
+      "reason": "アカウント起因のリスク",
+      "flags": [
+        "要確認アカウント"
+      ],
+      "approved": false,
+      "body_preview": "相場を読むより積立の期間を長く取る考え方です。"
+    },
+    {
+      "draft_id": "SC-1038",
+      "topic": "家計簿の始め方",
+      "scheduled_at": "2026-09-14T18:30:00+09:00",
+      "platform_ref": "@kakei_mirai",
+      "account_id": "LM-109",
+      "handle": "@kakei_mirai",
+      "platform": "relayo",
+      "action": "approval_p2",
+      "reason": "アカウント起因のリスク",
+      "flags": [
+        "要確認アカウント"
+      ],
+      "approved": false,
+      "body_preview": "まずは1か月だけ支出を記録してみる方法です。"
+    },
+    {
+      "draft_id": "SC-1005",
+      "topic": "固定費の見直し",
+      "scheduled_at": "2026-09-18T08:00:00+09:00",
+      "platform_ref": "@manabi_window",
+      "account_id": "LM-110",
+      "handle": "@manabi_window",
+      "platform": "relayo",
+      "action": "approval_p2",
+      "reason": "アカウント起因のリスク",
+      "flags": [
+        "要確認アカウント"
+      ],
+      "approved": false,
+      "body_preview": "サブスクの契約日を一覧にすると見直しやすくなります。"
+    },
+    {
+      "draft_id": "SC-1013",
+      "topic": "NISAの基本",
+      "scheduled_at": "2026-09-18T08:30:00+09:00",
+      "platform_ref": "mirai@lumora.example.jp",
+      "account_id": "LM-109",
+      "handle": "@kakei_mirai",
+      "platform": "relayo",
+      "action": "approval_p2",
+      "reason": "アカウント起因のリスク",
+      "flags": [
+        "要確認アカウント"
+      ],
+      "approved": false,
+      "body_preview": "非課税枠の使い方は年間の入金計画から考えます。"
+    }
+  ]
+}

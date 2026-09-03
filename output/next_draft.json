@@ -1,0 +1,13 @@
+{
+  "registered": false,
+  "reason": "Tessera に下書き登録エンドポイントが存在しないためローカル出力のみ",
+  "draft": {
+    "topic": "運用レポート",
+    "body_preview": "本日の自動公開 3件。承認待ち 10件、手動対応 7件。",
+    "related_draft_ids": [
+      "SC-1015",
+      "SC-1012",
+      "SC-1022"
+    ]
+  }
+}

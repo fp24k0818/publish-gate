@@ -1,0 +1,447 @@
+{
+  "summary": {
+    "fetched": 40,
+    "fetch_pages": 3,
+    "already_published": 7,
+    "not_due": 3,
+    "unparseable_schedule": 0,
+    "delayed": 30,
+    "counts": {
+      "approval_p1": 5,
+      "approval_p2": 5,
+      "blocked": 8,
+      "manual": 7,
+      "publish": 3,
+      "skip_duplicate": 2
+    },
+    "published_ok": 3,
+    "published_failed": 0
+  },
+  "decisions": [
+    {
+      "draft_id": "SC-1001",
+      "topic": "積立の記録方法",
+      "scheduled_at": "2026-09-05T08:30:00+09:00",
+      "platform_ref": "@tsumitate_lab",
+      "account_id": "LM-105",
+      "handle": "@tsumitate_lab",
+      "platform": "tessera",
+      "action": "approval_p2",
+      "reason": "アカウント起因のリスク",
+      "flags": [
+        "要確認アカウント"
+      ]
+    },
+    {
+      "draft_id": "SC-1015",
+      "topic": "積立の基本",
+      "scheduled_at": "2026-09-06T08:30:00+09:00",
+      "platform_ref": "LM-107",
+      "account_id": "LM-107",
+      "handle": "",
+      "platform": "tessera",
+      "action": "publish",
+      "reason": "リスク信号なし",
+      "flags": []
+    },
+    {
+      "draft_id": "SC-1021",
+      "topic": "家計簿の費目分け",
+      "scheduled_at": "2026-09-06T18:30:00+09:00",
+      "platform_ref": "hello@lumora.example.jp",
+      "account_id": null,
+      "handle": null,
+      "platform": null,
+      "action": "blocked",
+      "reason": "ambiguous: 同一emailに複数アカウント。台帳内に区別する情報が無い",
+      "flags": []
+    },
+    {
+      "draft_id": "SC-1027",
+      "topic": "光熱費の節約",
+      "scheduled_at": "2026-09-06T20:00:00+09:00",
+      "platform_ref": "@lumora_hq_old",
+      "account_id": "LM-103",
+      "handle": "@lumora_hq_old",
+      "platform": "tessera",
+      "action": "blocked",
+      "reason": "suspended: 凍結アカウント宛。後継候補 LM-104 @lumora_hq2（自動転送はしない）",
+      "flags": []
+    },
+    {
+      "draft_id": "SC-1040",
+      "topic": "NISAの活用",
+      "scheduled_at": "2026-09-09T07:30:00+09:00",
+      "platform_ref": "@lumora_journal",
+      "account_id": "LM-106",
+      "handle": "@lumora_journal",
+      "platform": "ledgerly",
+      "action": "manual",
+      "reason": "投稿APIが存在しないプラットフォーム宛",
+      "flags": [
+        "断定的表現を含む",
+        "要確認アカウント"
+      ]
+    },
+    {
+      "draft_id": "SC-1009",
+      "topic": "家計の棚卸し",
+      "scheduled_at": "2026-09-09T12:00:00+09:00",
+      "platform_ref": "@lumora_journal",
+      "account_id": "LM-106",
+      "handle": "@lumora_journal",
+      "platform": "ledgerly",
+      "action": "manual",
+      "reason": "投稿APIが存在しないプラットフォーム宛",
+      "flags": [
+        "要確認アカウント"
+      ]
+    },
+    {
+      "draft_id": "SC-1026",
+      "topic": "積立シミュレーション",
+      "scheduled_at": "2026-09-09T12:00:00+09:00",
+      "platform_ref": "hello@lumora.example.jp",
+      "account_id": null,
+      "handle": null,
+      "platform": null,
+      "action": "blocked",
+      "reason": "ambiguous: 同一emailに複数アカウント。台帳内に区別する情報が無い",
+      "flags": [
+        "断定的表現を含む"
+      ]
+    },
+    {
+      "draft_id": "SC-1006",
+      "topic": "家計の赤字対策",
+      "scheduled_at": "2026-09-10T07:00:00+09:00",
+      "platform_ref": "@zakki_lumora",
+      "account_id": "LM-111",
+      "handle": "@zakki_lumora",
+      "platform": "tessera",
+      "action": "approval_p1",
+      "reason": "内容起因のリスク（法令抵触の可能性）",
+      "flags": [
+        "断定的表現を含む"
+      ]
+    },
+    {
+      "draft_id": "SC-1037",
+      "topic": "保険の見直し",
+      "scheduled_at": "2026-09-10T08:00:00+09:00",
+      "platform_ref": "@kakei_mirai",
+      "account_id": "LM-109",
+      "handle": "@kakei_mirai",
+      "platform": "relayo",
+      "action": "approval_p1",
+      "reason": "内容起因のリスク（法令抵触の可能性）",
+      "flags": [
+        "断定的表現を含む",
+        "要確認アカウント"
+      ]
+    },
+    {
+      "draft_id": "SC-1004",
+      "topic": "NISAの基本",
+      "scheduled_at": "2026-09-10T08:15:00+09:00",
+      "platform_ref": "@manabi_window",
+      "account_id": "LM-110",
+      "handle": "@manabi_window",
+      "platform": "relayo",
+      "action": "approval_p1",
+      "reason": "内容起因のリスク（法令抵触の可能性）",
+      "flags": [
+        "断定的表現を含む",
+        "要確認アカウント"
+      ]
+    },
+    {
+      "draft_id": "SC-1030",
+      "topic": "先取り貯蓄",
+      "scheduled_at": "2026-09-10T20:15:00+09:00",
+      "platform_ref": "@lumora_hq",
+      "account_id": "LM-101",
+      "handle": "@lumora_hq",
+      "platform": "tessera",
+      "action": "approval_p1",
+      "reason": "内容起因のリスク（法令抵触の可能性）",
+      "flags": [
+        "断定的表現を含む"
+      ]
+    },
+    {
+      "draft_id": "SC-1016",
+      "topic": "積立投資の心構え",
+      "scheduled_at": "2026-09-10T20:30:00+09:00",
+      "platform_ref": "@tsumitate_lab",
+      "account_id": "LM-105",
+      "handle": "@tsumitate_lab",
+      "platform": "tessera",
+      "action": "approval_p1",
+      "reason": "内容起因のリスク（法令抵触の可能性）",
+      "flags": [
+        "断定的表現を含む",
+        "要確認アカウント"
+      ]
+    },
+    {
+      "draft_id": "SC-1014",
+      "topic": "固定費メモ",
+      "scheduled_at": "2026-09-11T09:45:00+09:00",
+      "platform_ref": "@lumora_diary",
+      "account_id": "LM-108",
+      "handle": "@lumora_diary",
+      "platform": "ledgerly",
+      "action": "manual",
+      "reason": "投稿APIが存在しないプラットフォーム宛",
+      "flags": []
+    },
+    {
+      "draft_id": "SC-1018",
+      "topic": "積立の考え方",
+      "scheduled_at": "2026-09-11T12:00:00+09:00",
+      "platform_ref": "@tsumitate_lab2",
+      "account_id": "LM-112",
+      "handle": "@tsumitate_lab2",
+      "platform": "relayo",
+      "action": "approval_p2",
+      "reason": "アカウント起因のリスク",
+      "flags": [
+        "要確認アカウント"
+      ]
+    },
+    {
+      "draft_id": "SC-1029",
+      "topic": "積立の効果",
+      "scheduled_at": "2026-09-11T18:30:00+09:00",
+      "platform_ref": "@nobody_here",
+      "account_id": null,
+      "handle": null,
+      "platform": null,
+      "action": "blocked",
+      "reason": "unresolved: 台帳に該当なし",
+      "flags": [
+        "断定的表現を含む"
+      ]
+    },
+    {
+      "draft_id": "SC-1034",
+      "topic": "固定費の見直し",
+      "scheduled_at": "2026-09-11T19:30:00+09:00",
+      "platform_ref": "@lumora_hq_old",
+      "account_id": "LM-103",
+      "handle": "@lumora_hq_old",
+      "platform": "tessera",
+      "action": "blocked",
+      "reason": "suspended: 凍結アカウント宛。後継候補 LM-104 @lumora_hq2（自動転送はしない）",
+      "flags": [
+        "断定的表現を含む"
+      ]
+    },
+    {
+      "draft_id": "SC-1011",
+      "topic": "積立ノート",
+      "scheduled_at": "2026-09-14T08:45:00+09:00",
+      "platform_ref": "diary@lumora.example.jp",
+      "account_id": "LM-108",
+      "handle": "@lumora_diary",
+      "platform": "ledgerly",
+      "action": "manual",
+      "reason": "投稿APIが存在しないプラットフォーム宛",
+      "flags": []
+    },
+    {
+      "draft_id": "SC-1010",
+      "topic": "積立の始め方",
+      "scheduled_at": "2026-09-14T09:00:00+09:00",
+      "platform_ref": "@lumora_hq",
+      "account_id": "LM-101",
+      "handle": "@lumora_hq",
+      "platform": "tessera",
+      "action": "skip_duplicate",
+      "reason": "公開履歴あり（EV-3102）",
+      "flags": []
+    },
+    {
+      "draft_id": "SC-1038",
+      "topic": "家計簿の始め方",
+      "scheduled_at": "2026-09-14T18:30:00+09:00",
+      "platform_ref": "@kakei_mirai",
+      "account_id": "LM-109",
+      "handle": "@kakei_mirai",
+      "platform": "relayo",
+      "action": "approval_p2",
+      "reason": "アカウント起因のリスク",
+      "flags": [
+        "要確認アカウント"
+      ]
+    },
+    {
+      "draft_id": "SC-1008",
+      "topic": "老後資金の準備",
+      "scheduled_at": "2026-09-14T18:45:00+09:00",
+      "platform_ref": "@nobody_here",
+      "account_id": null,
+      "handle": null,
+      "platform": null,
+      "action": "blocked",
+      "reason": "unresolved: 台帳に該当なし",
+      "flags": [
+        "断定的表現を含む"
+      ]
+    },
+    {
+      "draft_id": "SC-1003",
+      "topic": "NISAの基本",
+      "scheduled_at": "2026-09-15T09:00:00+09:00",
+      "platform_ref": "@lumora_journal",
+      "account_id": "LM-106",
+      "handle": "@lumora_journal",
+      "platform": "ledgerly",
+      "action": "skip_duplicate",
+      "reason": "公開履歴あり（EV-3101）",
+      "flags": [
+        "要確認アカウント"
+      ]
+    },
+    {
+      "draft_id": "SC-1036",
+      "topic": "家計簿の続け方",
+      "scheduled_at": "2026-09-15T12:15:00+09:00",
+      "platform_ref": "LM-108",
+      "account_id": "LM-108",
+      "handle": "@lumora_diary",
+      "platform": "ledgerly",
+      "action": "manual",
+      "reason": "投稿APIが存在しないプラットフォーム宛",
+      "flags": []
+    },
+    {
+      "draft_id": "SC-1017",
+      "topic": "家計簿の振り返り",
+      "scheduled_at": "2026-09-16T07:00:00+09:00",
+      "platform_ref": "@lumora_diary",
+      "account_id": "LM-108",
+      "handle": "@lumora_diary",
+      "platform": "ledgerly",
+      "action": "manual",
+      "reason": "投稿APIが存在しないプラットフォーム宛",
+      "flags": [
+        "前回失敗（EV-3104）のため再投稿対象"
+      ]
+    },
+    {
+      "draft_id": "SC-1012",
+      "topic": "家計の小ワザ",
+      "scheduled_at": "2026-09-17T09:45:00+09:00",
+      "platform_ref": "@zakki_lumora",
+      "account_id": "LM-111",
+      "handle": "@zakki_lumora",
+      "platform": "tessera",
+      "action": "publish",
+      "reason": "リスク信号なし",
+      "flags": []
+    },
+    {
+      "draft_id": "SC-1005",
+      "topic": "固定費の見直し",
+      "scheduled_at": "2026-09-18T08:00:00+09:00",
+      "platform_ref": "@manabi_window",
+      "account_id": "LM-110",
+      "handle": "@manabi_window",
+      "platform": "relayo",
+      "action": "approval_p2",
+      "reason": "アカウント起因のリスク",
+      "flags": [
+        "要確認アカウント"
+      ]
+    },
+    {
+      "draft_id": "SC-1013",
+      "topic": "NISAの基本",
+      "scheduled_at": "2026-09-18T08:30:00+09:00",
+      "platform_ref": "mirai@lumora.example.jp",
+      "account_id": "LM-109",
+      "handle": "@kakei_mirai",
+      "platform": "relayo",
+      "action": "approval_p2",
+      "reason": "アカウント起因のリスク",
+      "flags": [
+        "要確認アカウント"
+      ]
+    },
+    {
+      "draft_id": "SC-1033",
+      "topic": "家計の記録",
+      "scheduled_at": "2026-09-19T09:45:00+09:00",
+      "platform_ref": "@phantom_writer",
+      "account_id": null,
+      "handle": null,
+      "platform": null,
+      "action": "blocked",
+      "reason": "unresolved: 台帳に該当なし",
+      "flags": []
+    },
+    {
+      "draft_id": "SC-1022",
+      "topic": "固定費の見直し",
+      "scheduled_at": "2026-09-19T12:00:00+09:00",
+      "platform_ref": "@lumora_hq",
+      "account_id": "LM-101",
+      "handle": "@lumora_hq",
+      "platform": "tessera",
+      "action": "publish",
+      "reason": "リスク信号なし",
+      "flags": []
+    },
+    {
+      "draft_id": "SC-1028",
+      "topic": "通信費の見直し",
+      "scheduled_at": "2026-09-19T18:00:00+09:00",
+      "platform_ref": "@lumora_hq_old",
+      "account_id": "LM-103",
+      "handle": "@lumora_hq_old",
+      "platform": "tessera",
+      "action": "blocked",
+      "reason": "suspended: 凍結アカウント宛。後継候補 LM-104 @lumora_hq2（自動転送はしない）",
+      "flags": []
+    },
+    {
+      "draft_id": "SC-1019",
+      "topic": "積立の記録",
+      "scheduled_at": "2026-09-19T19:30:00+09:00",
+      "platform_ref": "LM-106",
+      "account_id": "LM-106",
+      "handle": "@lumora_journal",
+      "platform": "ledgerly",
+      "action": "manual",
+      "reason": "投稿APIが存在しないプラットフォーム宛",
+      "flags": [
+        "要確認アカウント"
+      ]
+    }
+  ],
+  "publish_results": {
+    "SC-1015": {
+      "ok": true,
+      "supported": true,
+      "post_id": "TS-a96650d9",
+      "reason": null,
+      "attempts": 1
+    },
+    "SC-1012": {
+      "ok": true,
+      "supported": true,
+      "post_id": "TS-3ff2c61b",
+      "reason": null,
+      "attempts": 1
+    },
+    "SC-1022": {
+      "ok": true,
+      "supported": true,
+      "post_id": "TS-7dcbe6d5",
+      "reason": null,
+      "attempts": 1
+    }
+  }
+}
