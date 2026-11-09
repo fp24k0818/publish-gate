@@ -1,11 +1,19 @@
 このリポジトリは、作者のポートフォリオとして閲覧していただくために公開しています。
+このファイルが含まれる版には、オープンソースライセンスを付与していません。
 
-オープンソースライセンスは付与していません。
-GitHub の利用規約で認められる閲覧とフォークを除き、
-コードや文書の複製、改変、再配布、利用は許可していません。
+次の場合を除き、コードや文書の複製、改変、再配布、利用は許可していません。
+- GitHub の利用規約で認められる閲覧とフォーク
+- 内容を確かめるために、手元に複製して README の手順で実行すること
+- 法令で認められる場合
 
-This repository is published as a portfolio for viewing only.
+現状のまま提供し、いかなる保証もしません。
 
-No open source license is granted. Except for viewing and forking as permitted
-by the GitHub Terms of Service, you may not copy, modify, redistribute, or use
-the code or documents in this repository.
+This repository is published as a portfolio for viewing.
+No open source license is granted for the versions that include this file.
+
+Copying, modifying, redistributing, or using the code or documents is not permitted, except:
+- viewing and forking as permitted by the GitHub Terms of Service;
+- copying it locally and running it as described in the README to examine its contents;
+- as permitted by applicable law.
+
+Provided "as is", without warranty of any kind.

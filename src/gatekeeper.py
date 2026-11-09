@@ -39,7 +39,7 @@ class Decision:
 
 
 def parse_publish_log(csv_text):
-    """公開履歴を正とする。下書き側の status は更新漏れが実在するため信用しない。"""
+    """公開履歴を正とする。下書き側の status は更新漏れがありうるため信用しない。"""
     latest = {}
     for row in csv.DictReader(io.StringIO(csv_text)):
         did = row.get("draft_id")

@@ -2,7 +2,7 @@
 
 優先順位: account_id > handle > email
 （一意性が保証される順。handle は再発行され得る。email は共有され得る）
-display_name は同名の別アカウントが実在するため識別子に使わない。
+display_name は同名の別アカウントがありうるため識別子に使わない。
 """
 import csv
 import io
