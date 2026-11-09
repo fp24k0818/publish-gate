@@ -3,6 +3,9 @@
 滞留した下書きのうち、投稿先とリスクの両方が確定したものだけを自動公開し、
 それ以外は理由を付けて人へ渡すバッチ。
 
+複数SNSプラットフォームを横断する投稿自動化のデモ。Python 標準ライブラリのみで書かれ、同梱のモックAPIで動作する。
+登場するブランド Lumora とプラットフォーム Tessera / Ledgerly / Relayo はすべて架空で、実在の団体・人物・サービスとは無関係。
+
 ---
 
 ## この設計の主張
@@ -17,9 +20,12 @@
 
 ---
 
-## 実際の処理結果
+## 実際の処理結果（同梱のモックAPIとサンプルデータでの実測）
 
-基準時刻 `2026-09-20T21:00:00+09:00` で40件の下書きを処理した結果（遅延30件の振り分け）。
+同梱のモックAPIとサンプルデータに対し、基準時刻 `2026-09-20T21:00:00+09:00` で40件の下書きを処理した結果（遅延30件の振り分け）。
+
+自動公開は3件だが、残る27件も捨てられてはいない。承認待ち10件・要手動対応7件・未解決／要確認／凍結8件・重複2件が、
+それぞれ理由付きで `output/` に出力される（詳細は `DESIGN.md` 5章）。
 
 | 区分 | 件数 |
 |---|---|
@@ -32,9 +38,6 @@
 | **承認待ち P2（要確認アカウント）** | **5** |
 | **自動公開（Tessera）** | **3** |
 | 自動公開（Relayo） | 0 |
-
-自動公開は3件だが、残る27件も捨てられてはいない。承認待ち10件・要手動対応7件・未解決／要確認／凍結8件・重複2件が、
-それぞれ理由付きで `output/` に出力される（詳細は `DESIGN.md` 5章）。
 
 ---
 
@@ -108,32 +111,31 @@ curl http://localhost:8703/status   # relayo
 ### 2. 本体を実行
 
 リポジトリのルートから実行する。
-
-```bash
-rm -rf output && SIMULATED_NOW="2026-09-20T21:00:00+09:00" PYTHONPATH=src python3 src/main.py output
-```
-
-第1引数が出力先ディレクトリ。
-
-> **同梱の `output/` は実行結果のサンプルである。**
-> `output/state.json` に公開実績が含まれており、そのまま再実行すると
-> 該当分が重複として除外されて自動公開が0件になる（重複抑止が正しく働いた結果）。
-> `DESIGN.md` 記載の件数を再現するときは、上記のとおり出力先を空にしてから実行する。
-
 判定件数は基準時刻に依存するため、`SIMULATED_NOW` で任意時点を再現できる。
 `DESIGN.md` に記載した件数は、すべて `2026-09-20T21:00:00+09:00` での実測値である。
 
-### 3. 承認ループを確認する
-
-初回実行で `output/pending_approval.json` に承認待ちが出力される。
-このうち Relayo 宛の項目の `approved` を `true` に変更して再実行すると、その項目が公開される。
-
 ```bash
-$EDITOR output/pending_approval.json   # Relayo宛の approved: false → true
-SIMULATED_NOW="2026-09-20T21:00:00+09:00" PYTHONPATH=src python3 src/main.py output
+SIMULATED_NOW="2026-09-20T21:00:00+09:00" PYTHONPATH=src python3 src/main.py run
 ```
 
-前回公開済みの3件は `output/state.json` により「前回実行で公開済み」として除外される。
+第1引数が出力先ディレクトリ（ここでは `run/`）。
+
+> **同梱の `output/` は実行結果のサンプルである。**
+> `output/state.json` に公開実績が含まれており、`output` を出力先にして再実行すると
+> 該当分が重複として除外されて自動公開が0件になる（重複抑止が正しく働いた結果）。
+> `DESIGN.md` 記載の件数を再現するときは、上記のとおり同梱の `output/` とは別の空ディレクトリを出力先に指定する。
+
+### 3. 承認ループを確認する
+
+初回実行で `run/pending_approval.json` に承認待ちが出力される。
+このうち Relayo 宛の項目（P1に2件・P2に4件）の `approved` を `true` に変更して再実行すると、その項目が公開される。
+
+```bash
+$EDITOR run/pending_approval.json   # Relayo宛の approved: false → true
+SIMULATED_NOW="2026-09-20T21:00:00+09:00" PYTHONPATH=src python3 src/main.py run
+```
+
+前回公開済みの3件は `run/state.json` により「前回実行で公開済み」として除外される。
 
 > 短時間に再実行すると、サーバ側のレート制限（Tessera 12 req/90秒 / Relayo 4 req/75秒）に
 > 達して待機が入る。待機中は理由と秒数が表示される。
@@ -145,14 +147,14 @@ python3 -m unittest discover -s tests
 ```
 
 16件。日時の正規化と名寄せを対象としている
-（対象を絞った理由は `DESIGN.md` の積み残し参照）。
+（対象を絞った理由は `CLAUDE.md` の「6. スコープ外」参照）。
 
 ### 5. 障害注入時の動作
 
 ```bash
 # Ledgerly を停止 → キャッシュにフォールバックして継続する
 curl -X POST -d '{"halt":true}' http://localhost:8702/_admin/fault
-SIMULATED_NOW="2026-09-20T21:00:00+09:00" PYTHONPATH=src python3 src/main.py output
+SIMULATED_NOW="2026-09-20T21:00:00+09:00" PYTHONPATH=src python3 src/main.py run
 
 # 復旧（確認が終わったら必ず戻す）
 curl -X POST -d '{"halt":false}' http://localhost:8702/_admin/fault
@@ -171,7 +173,7 @@ curl -X POST -d '{"halt":false}' http://localhost:8702/_admin/fault
 | `result.json` | 全判定結果と実行サマリ。「なぜ公開されなかったか」が下書き単位で追える |
 | `pending_approval.json` | 承認待ち。**`approved` を `true` にして再実行すると公開される** |
 | `manual_ledgerly.md` | 投稿APIが存在しないプラットフォーム宛の、人手投稿用パッケージ |
-| `unresolved.json` | 名寄せできなかった／凍結アカウント宛／公開履歴の状態が不明／時刻を解析できなかった下書き |
+| `unresolved.json` | 下書きのうち、名寄せできなかった／凍結アカウント宛／公開履歴の状態が不明／時刻を解析できなかったもの |
 | `next_draft.json` | レポートから生成した次回下書き（登録APIが無いためローカル出力） |
 | `state.json` | 公開実績。重複公開の抑止に使用 |
 | `cache_accounts.csv` / `cache_publish_log.csv` | 台帳と公開履歴のキャッシュ。Ledgerly 停止時のフォールバックに使用 |
@@ -203,7 +205,7 @@ Human-in-the-loop を例外処理ではなく、パイプラインの正規の�
 
 3つのAPIは本システム専用の内部依存で、他ツールから再利用する予定がない。
 MCP化が効くのは Claude が対話的にツールを呼ぶ場面だが、本システムはバッチ実行で呼び出し順序は実装側が決める。
-この規模では、サーバー定義・スキーマ・起動管理という保守対象が増えるだけになる（`DESIGN.md` §6-3）。
+この構成でMCP化すると、サーバー定義・スキーマ・起動管理という保守対象が増える一方、得られるものが無い（`DESIGN.md` §6-3）。
 
 ---
 
@@ -235,7 +237,7 @@ MCP化が効くのは Claude が対話的にツールを呼ぶ場面だが、本
 │   └── test_units.py    # 日時正規化・名寄せの単体テスト
 ├── mock/                # 3系統のモックAPI（8701 / 8702 / 8703）
 ├── data/                # 下書きキュー・アカウント台帳・公開履歴
-└── output/              # 実行結果のサンプル（再現時は空にしてから実行）
+└── output/              # 実行結果のサンプル（再現時は別の出力先を指定する）
 ```
 
 `mock/` と `data/` は自作だが、**外部システム相当**として扱う。
@@ -245,7 +247,7 @@ MCP化が効くのは Claude が対話的にツールを呼ぶ場面だが、本
 
 ## 積み残し
 
-未実装項目と、実装するなら何をするかは `DESIGN.md` の「7. 積み残し」に理由つきで記載した。
+未実装項目と、実装するなら何をするかは [`DESIGN.md`](DESIGN.md) の「7. 積み残し」に理由つきで記載した。
 
 ---
 

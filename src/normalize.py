@@ -20,7 +20,7 @@ class UnparseableDatetime(ValueError):
 def parse_scheduled_at(value):
     """3フォーマット混在の scheduled_at を aware datetime に正規化する。
 
-    タイムゾーン情報を持たない形式は JST とみなす（積み残し#7 参照）。
+    タイムゾーン情報を持たない形式は JST とみなす（積み残し#9 参照）。
     """
     if not value or not str(value).strip():
         raise UnparseableDatetime("empty")
