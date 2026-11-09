@@ -221,7 +221,7 @@ MCP化が効くのは Claude が対話的にツールを呼ぶ場面だが、本
 ```
 .
 ├── README.md            # 本ファイル
-├── LICENSE              # MIT
+├── LICENSE              # 閲覧用（利用許諾なし）
 ├── DESIGN.md            # 設計判断の説明
 ├── CLAUDE.md            # AIコーディング時の作業ルール
 ├── src/
@@ -253,4 +253,4 @@ MCP化が効くのは Claude が対話的にツールを呼ぶ場面だが、本
 
 ## ライセンス
 
-MIT License。詳細は [`LICENSE`](LICENSE) を参照。
+ポートフォリオとしての閲覧用であり、オープンソースライセンスは付与していない。詳細は [`LICENSE`](LICENSE) を参照。
